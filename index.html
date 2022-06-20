@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="/public/css/style.css"/>
+    <title>Tailwind</title>
+    <link rel="icon" href="/public/images/favicon.svg"/>
+    <script src="https://kit.fontawesome.com/643e1e523e.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-900">
+<!--show controls button-->
+<div id="show-controls-button" class="mx-5 mt-5 absolute hidden">
+    <div class="text-white/50 hover:text-white hover:cursor-pointer active:text-white/50">
+        <i class="fa-regular fa-circle-right w-10 h-10"></i>
+    </div>
+</div>
+<div class="flex flex-row">
+    <!--    controls container-->
+    <div id="controls-container"
+         class="w-96 px-4 flex-none h-[100vh] bg-blue-600 rounded-tr-3xl rounded-br-3xl flex flex-col gap-6 overflow-y-scroll no-scrollbar select-none">
+        <!-- hide controls button-->
+        <div id="hide-controls-button" class="mx-5 mt-5 flex justify-end">
+            <div class="text-black/50 hover:text-black/80 hover:cursor-pointer active:text-black/20">
+                <i class="fa-regular fa-circle-left w-10 h-10"></i>
+            </div>
+        </div>
+
+        <!--particles quantity box-->
+        <div id="sparkles-box" class="mx-5 bg-gray-700 rounded-xl shadows">
+            <div class="px-5 py-4 flex flex-col gap-3">
+                <div>
+                    <h1 class="text-white text-center text-lg font-semibold">Sparkles</h1>
+                </div>
+                <div class="text-base text-white flex">
+                    <label for="sparkles-quantity-slider" class="flex-auto">Quantity</label>
+                    <input id="sparkles-quantity-slider" class="w-40" type="range" min="1" max="10" value="3">
+                </div>
+                <div class="text-base text-white flex">
+                    <label for="sparkles-speed-slider" class="flex-auto">Speed</label>
+                    <input id="sparkles-speed-slider" class="w-40" type="range" min="1" max="10" value="3">
+                </div>
+                <div class="text-base text-white flex">
+                    <label for="sparkles-size-slider" class="flex-auto">Size</label>
+                    <input id="sparkles-size-slider" class="w-40" type="range" min="1" max="10" value="3">
+                </div>
+                <div class="text-base text-white flex">
+                    <label for="sparkles-area-slider" class="flex-auto">Area</label>
+                    <input id="sparkles-area-slider" class="w-40" type="range" min="1" max="10" value="3">
+                </div>
+                <div class="text-base text-white">
+                    <input id="sparkles-vectors-checkbox" type="checkbox">
+                    <label for="sparkles-vectors-checkbox" class="ml-2">Vectors</label>
+                </div>
+            </div>
+        </div>
+        <!--  trails box-->
+        <div id="trails-box" class="mx-5 bg-gray-700 rounded-xl shadows">
+            <div id="trails-container" class="px-5 py-4 flex flex-col gap-3">
+                <div>
+                    <h1 class="text-white text-center text-lg font-semibold">Trails</h1>
+                </div>
+                <div class="text-base text-white">
+                    <input id="sparkles-trails-checkbox" type="checkbox">
+                    <label for="sparkles-trails-checkbox" class="ml-2">Enable</label>
+                </div>
+                <div id="trails-slider-container" class="text-base text-white flex disable">
+                    <label for="sparkles-trails-slider" class="flex-auto">Amount</label>
+                    <input id="sparkles-trails-slider" class="w-40" type="range" min="1" max="10" value="3">
+                </div>
+            </div>
+        </div>
+
+        <!--  color box-->
+        <div id="color-box" class="mx-5 bg-gray-700 rounded-xl shadows">
+            <div class="px-5 py-4 flex flex-col gap-3">
+                <div>
+                    <h1 class="text-white text-center text-lg font-semibold">Sparkles Color</h1>
+                </div>
+                <div id="sparkle-radio-group" class="flex flex-col gap-2">
+                    <div class="text-base text-white flex-1">
+                        <input id="sparkles-default-color-radio" data-selection="default" checked type="radio"
+                               name="sparkle-color-radio">
+                        <label for="sparkles-default-color-radio" class="ml-2">Default</label>
+                    </div>
+                    <div class="text-base text-white flex-1">
+                        <input id="sparkles-multi-color-radio" data-selection="multi" type="radio"
+                               name="sparkle-color-radio">
+                        <label for="sparkles-multi-color-radio" class="ml-2">Multi Color</label>
+                    </div>
+                    <div class="text-base text-white flex-1">
+                        <input id="sparkles-color-cycle-radio" data-selection="cycle" type="radio"
+                               name="sparkle-color-radio">
+                        <label for="sparkles-color-cycle-radio" class="ml-2">Color Cycle</label>
+                    </div>
+                    <div class="text-base text-white flex-1">
+                        <input id="sparkles-custom-color-radio" data-selection="custom" type="radio"
+                               name="sparkle-color-radio">
+                        <label for="sparkles-custom-color-radio" class="ml-2">Custom Color</label>
+                        <input id="sparkle-color-picker" class="ml-10 w-20 rounded-lg p-0.5 disable" type="color"
+                               value="#ef476f">
+                        <label for="sparkle-color-picker"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--  shadow box-->
+        <div id="shadow-box" class="mx-5 mb-10 bg-gray-700 rounded-xl shadows">
+            <div class="px-5 py-4 flex flex-col gap-3">
+                <div>
+                    <h1 class="text-white text-center text-lg font-semibold">Sparkles Shadow</h1>
+                </div>
+                <div id="shadow-container" class="flex flex-col gap-2">
+                    <div class="text-base text-white">
+                        <input id="sparkles-shadow-checkbox" type="checkbox">
+                        <label for="sparkles-shadow-checkbox" class="ml-2">Enable</label>
+                    </div>
+                    <div id="shadow-slider-container" class="text-base text-white flex disable">
+                        <label for="sparkles-shadow-slider" class="flex-auto">Amount</label>
+                        <input id="sparkles-shadow-slider" class="w-40" type="range" min="0" max="10" value="3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="canvas-container" class="w-full h-[100vh]">
+        <canvas id="canvas" class="w-full h-full bg-gray-900"></canvas>
+    </div>
+</div>
+<script type="module" src="/src/controller.js"></script>
+</body>
+</html>
