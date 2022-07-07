@@ -15,15 +15,21 @@
 }
 
 @layer utilities {
-    @variants responsive {
-        /*Chrome, Safari and Opera */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
+    .scrollbar::-webkit-scrollbar {
+        width: 12px;
+    }
 
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+    .scrollbar::-webkit-scrollbar-track {
+        border-radius: 100vh;
+        background:transparent;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background: rgb(55, 65, 81);
+        border-radius: 100vh;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgb(31, 41, 55);
     }
 }
